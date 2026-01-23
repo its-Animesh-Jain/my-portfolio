@@ -1,0 +1,18 @@
+/* Ensure the nav sits on top of everything */
+nav {
+  transition: all 0.3s ease-in-out;
+}
+
+/* The interactive hover effect for links */
+nav a:hover {
+  color: var(--accent-gold) !important; /* Changes text to gold */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}   

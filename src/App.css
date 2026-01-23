@@ -1,0 +1,54 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-primary: #2c3e50;
+  --text-secondary: #596275;
+  --accent-gold: #c0a062; /* The Classical Element */
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Lato', sans-serif; /* Modern body text */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif; /* Classical headings */
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* --- Smooth Scrolling --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Layout Utilities --- */
+.container {
+  max-width: 90%; /* Changed from 1100px to use more screen space */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
