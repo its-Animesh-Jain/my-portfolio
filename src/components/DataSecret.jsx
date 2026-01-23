@@ -24,7 +24,13 @@ const DataSecret = ({ goBack }) => {
   ];
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', color: '#0F0', fontFamily: 'Courier New, monospace' }}>
+    <div style={{ 
+      position: 'relative', 
+      minHeight: '100vh', 
+      color: '#0F0', 
+      fontFamily: 'Courier New, monospace',
+      backgroundColor: 'black' // 1. Set the base color to Black
+    }}>
       
       {/* BACKGROUND VIDEO */}
       <video 
@@ -40,7 +46,7 @@ const DataSecret = ({ goBack }) => {
           zIndex: 0,
           top: 0,
           left: 0,
-          opacity: 0.8
+          opacity: 1.0 // 2. Lowered opacity from 0.8 to 0.3 (Makes it much darker)
         }}
       >
         <source src={matrixVideo} type="video/mp4" />
@@ -49,7 +55,7 @@ const DataSecret = ({ goBack }) => {
       {/* CONTENT OVERLAY */}
       <div className="container" style={{ padding: '5rem 2rem', position: 'relative', zIndex: 10 }}>
         
-        {/* HEADER - NEW GLOWING STYLE */}
+        {/* HEADER */}
         <div style={{ marginBottom: '3rem' }}>
             <h1 style={{ 
                 fontSize: '3rem', 
@@ -75,7 +81,6 @@ const DataSecret = ({ goBack }) => {
                 padding: '0.5rem 1rem',
                 borderLeft: '4px solid #0f0' 
             }}>
-            {/* FIX: Used &gt; instead of > to prevent JSX error */}
             &gt; User: Animesh_Jain // Access_Level: ADMIN
             </p>
         </div>
@@ -102,8 +107,7 @@ const DataSecret = ({ goBack }) => {
             }}
             >
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#fff', textShadow: '0 0 5px #0f0' }}>
-                 {/* FIX: Used &gt; here as well for safety */}
-                {`> ${skill.name}`}
+                 {`> ${skill.name}`}
               </h3>
               <p style={{ color: '#0f0', opacity: 0.9 }}>{`// ${skill.level}`}</p>
             </div>

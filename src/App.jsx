@@ -1,25 +1,34 @@
-import React, { useState } from 'react'; // Import useState
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Work from './components/Work';
 import About from './components/About';
-import DataSecret from './components/DataSecret'; // Import the new component
+import DataSecret from './components/DataSecret';
+import ResumeViewer from './components/ResumeViewer'; // Import the new Viewer
 import './App.css';
 
 function App() {
   const [isDataMode, setIsDataMode] = useState(false);
+  const [isResumeMode, setIsResumeMode] = useState(false); // New State
 
-  // If in Data Mode, show ONLY the Matrix screen
+  // 1. Check for Data Mode (Matrix)
   if (isDataMode) {
     return <DataSecret goBack={() => setIsDataMode(false)} />;
   }
 
-  // Otherwise, show the normal Portfolio
   return (
     <div>
+      {/* 2. Check for Resume Mode (Overlay) */}
+      {isResumeMode && (
+        <ResumeViewer onClose={() => setIsResumeMode(false)} />
+      )}
+
       <Navbar />
-      <Hero />
+      
+      {/* Pass the function to open Resume Mode down to Hero */}
+      <Hero onShowResume={() => setIsResumeMode(true)} />
+      
       <Skills />
       
       {/* THE SECRET SQL TRIGGER */}
@@ -31,9 +40,9 @@ function App() {
             background: '#2d2d2d', 
             color: '#f8f8f2', 
             padding: '1.5rem', 
-            display: 'inline-block',
-            borderRadius: '8px',
-            cursor: 'pointer',
+            display: 'inline-block', 
+            borderRadius: '8px', 
+            cursor: 'pointer', 
             border: '1px dashed #666',
             maxWidth: '90%'
           }}
