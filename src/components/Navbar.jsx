@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav style={navStyle}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h2 style={{ fontSize: '1.5rem', margin: 0 }}>AJ.</h2>
+        <h2 style={{ fontSize: '1.5rem', margin: 0 }}>Welcome to my Portfolio</h2>
         <div>
           {['Home', 'Skills', 'Projects', 'Contact'].map((item) => (
             <Link 
