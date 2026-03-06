@@ -1,50 +1,105 @@
+/* ============================================================
+   Skills.css
+   ============================================================ */
+
 .skills-section {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9; /* Light grey background */
-  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-.skills-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-}
-
+/* ── Grid ───────────────────────────────────────────────────── */
 .skills-grid {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.skill-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  transition: transform 0.2s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px); /* Slight lift effect on hover */
-}
-
-.skill-card h3 {
-  color: #007bff; /* Accent color */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.5rem;
 }
 
-.skill-list {
-  list-style: none;
-  padding: 0;
-  text-align: left;
+/* ── Skill Card ─────────────────────────────────────────────── */
+.skill-card {
+  padding: 2rem;
 }
 
-.skill-list li {
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-  color: #555;
+.skill-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.8rem;
+}
+
+.skill-card__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.skill-card__title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ── Skill Bar ──────────────────────────────────────────────── */
+.skill-bar {
+  margin-bottom: 1.1rem;
+}
+
+.skill-bar__label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  color: rgba(232, 234, 208, 0.55);
+  margin-bottom: 6px;
+}
+
+.skill-bar__pct {
+  color: var(--green);
+}
+
+.skill-bar__track {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.45);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Data Science banner ────────────────────────────────────── */
+.ds-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.4rem 2rem;
+  background: rgba(201, 168, 76, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 4px;
+}
+
+.ds-banner__icon {
+  font-size: 1.4rem;
+}
+
+.ds-banner__label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.ds-banner__text {
+  font-size: 0.88rem;
+  color: rgba(232, 234, 208, 0.5);
 }
