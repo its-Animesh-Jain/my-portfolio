@@ -89,7 +89,7 @@ function App() {
             </p>
 
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <a href="mailto:animesh@example.com" className="btn-green">
+              <a href="mailto:itsanimeshjain@gmail.com" className="btn-green">
                 Send Message
               </a>
 
